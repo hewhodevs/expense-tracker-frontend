@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
+import { RouterModule, Route, Routes } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { ListExpenseComponent } from './components/list-expense/list-expense.component';
+import { AddExpenseComponent } from './components/add-expense/add-expense.component';
 
+const routers: Routes = [
+  {path: 'expenses', component: ListExpenseComponent},
+  {path: 'addexpense', component: AddExpenseComponent},
+  {path: '', redirectTo: '/expenses', pathMatch: 'full'}
+];
 @NgModule({
   declarations: [
     AppComponent,
-    ListExpenseComponent
+    ListExpenseComponent,
+    AddExpenseComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routers)
   ],
   providers: [],
   bootstrap: [AppComponent]
