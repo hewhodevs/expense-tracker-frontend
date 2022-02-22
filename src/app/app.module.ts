@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Route, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { ListExpenseComponent } from './components/list-expense/list-expense.component';
@@ -21,6 +22,7 @@ const routers: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routers)
   ],
   providers: [],

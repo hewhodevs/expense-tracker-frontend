@@ -10,7 +10,7 @@ import { ExpenseService } from 'src/app/services/expense.service';
 })
 export class AddExpenseComponent implements OnInit {
 
-  expensee: Expense = new Expense();
+  expense: Expense = new Expense();
 
   constructor(private _expenseService: ExpenseService,
               private _router: Router) { }
@@ -19,7 +19,7 @@ export class AddExpenseComponent implements OnInit {
   }
 
   saveExpense() {
-    this._expenseService.saveExpense(this.expensee).subscribe(
+    this._expenseService.saveExpense(this.expense).subscribe(
       data => {
         console.log('response', data);
         this._router.navigateByUrl("/expenses");
